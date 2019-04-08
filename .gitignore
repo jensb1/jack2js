@@ -6,6 +6,7 @@ Cargo.lock
 **/build
 **/index.node
 **/artifacts.json
+yarn-error.log
 cli/lib
 test/cli/lib
 npm-debug.log
