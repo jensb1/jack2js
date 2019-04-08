@@ -33,7 +33,7 @@ extern {
 
 
 
-use neon::prelude::*;
+
 use std::ptr;
 use std::ffi::{CString, CStr};
 
@@ -44,11 +44,9 @@ pub struct Jack2 {
 	client: *mut jack_client_t,
 }
 
-type Unit = ();
-
 declare_types! {
 	pub class JsJack2 for Jack2 {
-		init(mut cx) {
+		init(_cx) {
 
 			let options: jack_options_t = JackOptions_JackNullOption;
 			let mut status: jack_status_t = 0;
@@ -122,7 +120,7 @@ declare_types! {
 		method get(mut cx) {
 			let attr: String = cx.argument::<JsString>(0)?.value();
 
-			let this = cx.this();
+			let _this = cx.this();
 
 			match &attr[..] {
 				"client" => {
