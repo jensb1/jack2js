@@ -1,0 +1,16 @@
+[package]
+name = "jack2"
+version = "0.1.0"
+build = "build.rs"
+
+[lib]
+name = "jack2"
+crate-type = ["dylib"]
+
+[build-dependencies]
+neon-build = "0.2"
+libc = "0.2.0"
+bindgen = "0.42.2"
+
+[dependencies]
+neon = "0.2"
